@@ -591,7 +591,32 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- clangd = {},
-        gopls = {},
+        gopls = {
+          settings = {
+            gopls = {
+              directoryFilters = {
+                '-.buildkite',
+                '-.github',
+                '-.vscode',
+                '-adminui',
+                '-analytics_collector_devlocal',
+                '-bitbar-plugin',
+                '-desktop',
+                '-design-system',
+                '-migrations',
+                '-node_modules',
+                '-pkg/api/v1/generated/go/vendor',
+                '-pkg/api/v1/generated/terraform-provider-sdm/vendor',
+                '-pkg/api/v1/static',
+                '-S3',
+                '-scripts',
+                '-third_party',
+                '-third_party.d',
+              },
+            },
+          },
+        },
+
         -- pyright = {},
         rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
