@@ -160,6 +160,10 @@ vim.opt.scrolloff = 20
 -- -- tmux nav. see keymaps for explanation.
 vim.g.tmux_navigator_no_mappings = 1
 
+-- ignore neotree and other non-relevant buffers. seems the default "blank" was tripping it up
+-- see :h sessionoptions. this is a neovim option that persistence hooks into.
+vim.opt.sessionoptions = { 'buffers', 'curdir', 'tabpages', 'winsize', 'help', 'globals', 'skiprtp', 'folds' }
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
