@@ -193,13 +193,6 @@ vim.keymap.set('v', '<lt>', '<lt>gv', { desc = 'Outdent' })
 vim.keymap.set('v', '>', '>gv', { desc = 'Indent' })
 --- end custom shortcuts
 
--- tmux nav
-vim.keymap.set('n', '<C-h>', '<Cmd>TmuxNavigateLeft<CR>')
-vim.keymap.set('n', '<C-l>', '<Cmd>TmuxNavigateRight<CR>')
-vim.keymap.set('n', '<C-j>', '<Cmd>TmuxNavigateDown<CR>')
-vim.keymap.set('n', '<C-k>', '<Cmd>TmuxNavigateUp<CR>')
---
-
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -223,6 +216,13 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- tmux nav
+vim.keymap.set('n', '<C-h>', '<Cmd>TmuxNavigateLeft<CR>')
+vim.keymap.set('n', '<C-l>', '<Cmd>TmuxNavigateRight<CR>')
+vim.keymap.set('n', '<C-j>', '<Cmd>TmuxNavigateDown<CR>')
+vim.keymap.set('n', '<C-k>', '<Cmd>TmuxNavigateUp<CR>')
+--
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -908,7 +908,23 @@ require('lazy').setup({
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'go', 'rust', 'gdscript' },
+      ensure_installed = {
+        'bash',
+        'c',
+        'diff',
+        'html',
+        'lua',
+        'luadoc',
+        'markdown',
+        'markdown_inline',
+        'query',
+        'vim',
+        'vimdoc',
+        'go',
+        'rust',
+        'gdscript',
+        'yaml',
+      },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
