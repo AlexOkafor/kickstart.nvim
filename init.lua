@@ -179,6 +179,8 @@ vim.keymap.set('n', '<leader>fy', '[[<Cmd>let @+ = expand("%")<CR>]]', { desc = 
 vim.keymap.set('n', '<leader>bd', '<Cmd>bd<cr>', { desc = 'delete buffer' })
 
 vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
+vim.keymap.set('n', 'H', '<CMD>bp<CR>', { desc = 'Prev buffer' })
+vim.keymap.set('n', 'L', '<CMD>bn<CR>', { desc = 'Next buffer' })
 --- end custom shortcuts
 
 -- tmux nav
