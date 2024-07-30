@@ -26,7 +26,10 @@ return {
     local run_file = function()
       require('neotest').run.run(vim.fn.expand '%')
     end
-    vim.keymap.set('n', '<leader>ts', require('neotest').run.run, { noremap = true, silent = true, desc = 'Rune Nearest Test' })
+    vim.keymap.set('n', '<leader>ta', require('neotest').run.run, { noremap = true, silent = true, desc = 'Run Nearest Test' })
     vim.keymap.set('n', '<leader>tt', run_file, { noremap = true, silent = true, desc = 'Run Tests in File' })
+    vim.keymap.set('n', '<leader>tr', require('neotest').run.run, { noremap = true, silent = true, desc = 'Rune Nearest Test' })
+    vim.keymap.set('n', '<leader>to', require('neotest').output_panel.toggle, { noremap = true, silent = true, desc = 'Toggle output panel' })
+    vim.keymap.set('n', '<leader>ts', require('neotest').summary.toggle, { noremap = true, silent = true, desc = 'Toggle summary panel' })
   end,
 }
