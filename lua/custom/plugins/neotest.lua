@@ -29,11 +29,4 @@ return {
     vim.keymap.set('n', '<leader>ts', require('neotest').run.run, { noremap = true, silent = true, desc = 'Rune Nearest Test' })
     vim.keymap.set('n', '<leader>tt', run_file, { noremap = true, silent = true, desc = 'Run Tests in File' })
   end,
-  -- opts = {
-  --   adapters = {
-  --     -- ['neotest-go'] = {
-  --     --   args = { '-tags=dev,test -count 1 -mod vendor' },
-  --     -- },
-  --   },
-  -- },
 }
