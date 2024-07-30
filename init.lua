@@ -175,8 +175,6 @@ vim.keymap.set('n', '<leader>w', '<Cmd>w<cr><esc>', { noremap = true, silent = t
 vim.keymap.set('n', '<leader>qq', '<Cmd>conf qa<cr><esc>', { noremap = true, silent = true, desc = 'Quit All' }) -- just quit vim with confirmation
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll Up' }) -- centered scrolling
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll Down' }) -- centered scrolling
-vim.keymap.set('v', 'p', 'pgvy', { desc = 'Paste' }) -- be able to past the thing I yanked over and over again (can also just use capital 'P')
-vim.keymap.set('v', '<leader>y', '"+y', { desc = 'Yank (Clipboard)' }) -- copy to clipboard
 vim.keymap.set('n', '<leader>fy', '[[<Cmd>let @+ = expand("%")<CR>]]', { desc = 'Yank Relative Path To Clipboard' }) -- copy relative path to register
 
 vim.keymap.set('n', '<leader>bd', '<Cmd>bd<cr>', { desc = 'delete buffer' })
@@ -184,6 +182,11 @@ vim.keymap.set('n', '<leader>bd', '<Cmd>bd<cr>', { desc = 'delete buffer' })
 vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
 vim.keymap.set('n', 'H', '<CMD>bp<CR>', { desc = 'Prev buffer' })
 vim.keymap.set('n', 'L', '<CMD>bn<CR>', { desc = 'Next buffer' })
+
+vim.keymap.set('v', 'p', 'pgvy', { desc = 'Paste' }) -- be able to past the thing I yanked over and over again (can also just use capital 'P')
+vim.keymap.set('v', '<leader>y', '"+y', { desc = 'Yank (Clipboard)' }) -- copy to clipboard
+vim.keymap.set('v', '<lt>', '<lt>gv', { desc = 'Outdent' })
+vim.keymap.set('v', '>', '>gv', { desc = 'Indent' })
 --- end custom shortcuts
 
 -- tmux nav
