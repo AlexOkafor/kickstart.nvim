@@ -17,5 +17,14 @@ return {
     vim.fn.sign_define('DiagnosticSignInfo', { text = ' ', texthl = 'DiagnosticSignInfo' })
     vim.fn.sign_define('DiagnosticSignHint', { text = '󰌵', texthl = 'DiagnosticSignHint' })
     vim.keymap.set('n', '<leader>e', '<CMD>Neotree toggle reveal<CR>', { noremap = true, silent = true, desc = 'Toggle Neotree' })
+    -- when we close lazygit refresh the file tree
+    vim.api.nvim_create_autocmd('TermClose', {
+      pattern = '*lazygit',
+      callback = function()
+        if package.loaded['neo-tree.sources.git_status'] then
+          require('neo-tree.sources.git_status').refresh()
+        end
+      end,
+    })
   end,
 }
