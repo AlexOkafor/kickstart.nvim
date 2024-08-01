@@ -174,6 +174,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>xx', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+local util = require 'util'
 -- custom remappings shortcuts
 vim.keymap.set('n', '<leader>w', '<Cmd>w<cr><esc>', { noremap = true, silent = true, desc = 'Faster Save' })
 vim.keymap.set('n', '<leader>qq', '<Cmd>conf qa<cr><esc>', { noremap = true, silent = true, desc = 'Quit All' }) -- just quit vim with confirmation
@@ -181,7 +182,8 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll Up' }) -- centered scro
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll Down' }) -- centered scrolling
 vim.keymap.set('n', '<leader>fy', '[[<Cmd>let @+ = expand("%")<CR>]]', { desc = 'Yank Relative Path To Clipboard' }) -- copy relative path to register
 
-vim.keymap.set('n', '<leader>bd', '<Cmd>bd<cr>', { desc = 'delete buffer' })
+vim.keymap.set('n', '<leader>bd', util.bufremove, { desc = 'delete buffer' })
+vim.keymap.set('n', '<leader>fn', '<Cmd>new<cr>', { desc = 'new file' })
 
 vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
 vim.keymap.set('n', 'H', '<CMD>bp<CR>', { desc = 'Prev buffer' })
