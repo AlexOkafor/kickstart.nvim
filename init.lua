@@ -157,6 +157,7 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 20
 
+vim.opt.wrap = false
 -- -- tmux nav. see keymaps for explanation.
 vim.g.tmux_navigator_no_mappings = 1
 
