@@ -11,7 +11,18 @@ return {
     follow_current_file = { enabled = true },
     leave_dirs_open = false,
   },
-  config = function()
+  opts = {
+    sources = { 'filesystem', 'buffers', 'git_status' },
+    filesystem = {
+      bind_to_cwd = false,
+      follow_current_file = { enabled = true },
+      use_libuv_file_watcher = true,
+    },
+    open_files_do_not_replace_types = { 'terminal', 'Trouble', 'trouble', 'qf', 'Outline' },
+  },
+  config = function(_, opts)
+    require('neo-tree').setup(opts)
+
     vim.fn.sign_define('DiagnosticSignError', { text = ' ', texthl = 'DiagnosticSignError' })
     vim.fn.sign_define('DiagnosticSignWarn', { text = ' ', texthl = 'DiagnosticSignWarn' })
     vim.fn.sign_define('DiagnosticSignInfo', { text = ' ', texthl = 'DiagnosticSignInfo' })
