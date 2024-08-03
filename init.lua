@@ -500,6 +500,12 @@ require('lazy').setup({
       --    That is to say, every time a new file is opened that is associated with
       --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
       --    function will be executed to configure the current buffer
+
+      -- setup gdscript
+      require('lspconfig')['gdscript'].setup {
+        name = 'godot',
+        cmd = vim.lsp.rpc.connect('127.0.0.1', 6005),
+      }
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
@@ -780,7 +786,8 @@ require('lazy').setup({
             luasnip.lsp_expand(args.body)
           end,
         },
-        completion = { completeopt = 'menu,menuone,noinsert' },
+        -- completion = { completeopt = 'menu,menuone,noinsert' },
+        completion = { completeopt = 'menu,menuone,noselect' }, -- dropping the noinsert fixes godot lsp for some reason?
 
         -- For an understanding of why these mappings were
         -- chosen, you will need to read `:help ins-completion`
