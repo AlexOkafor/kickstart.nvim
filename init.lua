@@ -418,6 +418,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = 'Search git status' })
       vim.keymap.set('n', '<leader>sb', builtin.current_buffer_fuzzy_find, { desc = '[S]earch Current [B]uffer' })
       vim.keymap.set('n', '<leader>sx', builtin.resume, { desc = 'Resume' })
+      vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = 'Keymaps' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
