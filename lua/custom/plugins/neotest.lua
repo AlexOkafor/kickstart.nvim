@@ -9,6 +9,7 @@ return {
     'nvim-neotest/neotest-go',
     'mrcjkb/rustaceanvim',
   },
+  enabled = false,
   config = function()
     -- local config = { -- Specify configuration
     --   go_test_args = {
