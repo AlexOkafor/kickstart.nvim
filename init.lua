@@ -177,6 +177,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>xx', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>xX', vim.diagnostic.setqflist, { desc = 'Open diagnostic workspace [Q]uickfix list' })
 
 local util = require 'util'
 -- custom remappings shortcuts
