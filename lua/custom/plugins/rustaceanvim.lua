@@ -6,7 +6,7 @@ vim.g.rustaceanvim = {
       ['rust-analyzer'] = {
         checkOnSave = {
           enable = true,
-          command = 'check',
+          command = 'clippy',
           extraArgs = { '--target-dir', '/tmp/rust-analyzer-check' },
         },
       },
