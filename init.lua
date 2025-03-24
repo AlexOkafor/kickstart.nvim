@@ -942,6 +942,7 @@ require('lazy').setup({
         'go',
         'rust',
         'gdscript',
+        'c_sharp',
         'yaml',
       },
       -- Autoinstall languages that are not installed
