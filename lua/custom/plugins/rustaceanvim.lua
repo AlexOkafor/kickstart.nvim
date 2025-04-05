@@ -7,7 +7,7 @@ vim.g.rustaceanvim = {
         checkOnSave = {
           enable = true,
           command = 'check',
-          extraArgs = { '--target-dir', '/tmp/rust-analyzer-check' },
+          extraArgs = { '--target-dir', vim.fn.expand '$TMPDIR' .. '/rust-analyzer-check' },
         },
       },
     },
