@@ -11,9 +11,9 @@ return {
     [[
     pub(crate) struct {}Plugin;
 
-    impl Plugin for {}Plugin {{
+    impl bevy_app::Plugin for {}Plugin {{
 
-      fn build(&self, app: &mut bevy::prelude::App) {{
+      fn build(&self, app: &mut bevy_app::App) {{
               {}
           }}
     }}
