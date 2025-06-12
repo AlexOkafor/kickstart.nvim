@@ -11,7 +11,7 @@ mod tests {
     use super::*;
 
     use crate::create_app;
-    use bevy::app::App;
+    use bevy_app::App;
 
     fn setup_test() -> App {
         let mut app = create_app();
