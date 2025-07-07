@@ -187,7 +187,7 @@ vim.keymap.set('n', '<leader>w', '<Cmd>w<cr><esc>', { noremap = true, silent = t
 vim.keymap.set('n', '<leader>qq', '<Cmd>conf qa<cr><esc>', { noremap = true, silent = true, desc = 'Quit All' }) -- just quit vim with confirmation
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll Up' }) -- centered scrolling
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll Down' }) -- centered scrolling
-vim.keymap.set('n', '<leader>fy', '[[<Cmd>let @+ = expand("%")<CR>]]', { desc = 'Yank Relative Path To Clipboard' }) -- copy relative path to register
+vim.keymap.set('n', '<leader>fy', '<Cmd>let @+ = expand("%")<CR>', { desc = 'Yank Relative Path To Clipboard' }) -- copy relative path to register
 
 vim.keymap.set('n', '<leader>bd', util.bufremove, { desc = 'delete buffer' })
 vim.keymap.set('n', '<leader>fn', '<Cmd>new<cr>', { desc = 'new file' })
