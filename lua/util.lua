@@ -44,4 +44,25 @@ function M.bufremove(buf)
   end
 end
 
+function M.get_relative_path_from_git_root()
+  -- Get the git root directory
+  local git_root = vim.fn.system('git rev-parse --show-toplevel 2>/dev/null'):gsub('\n', '')
+  
+  -- Check if we're in a git repository
+  if vim.v.shell_error ~= 0 then
+    -- Not in a git repo, fallback to regular expand
+    vim.fn.setreg('+', vim.fn.expand('%'))
+    return
+  end
+  
+  -- Get the absolute path of the current file
+  local file_path = vim.fn.expand('%:p')
+  
+  -- Calculate relative path from git root
+  local relative_path = file_path:sub(#git_root + 2) -- +2 to remove the trailing slash
+  
+  -- Copy to clipboard register
+  vim.fn.setreg('+', relative_path)
+end
+
 return M
