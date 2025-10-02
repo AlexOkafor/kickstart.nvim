@@ -247,6 +247,17 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Enable soft wrapping for markdown files with visual guide at 120 columns
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'markdown',
+  group = vim.api.nvim_create_augroup('markdown-wrap', { clear = true }),
+  callback = function()
+    vim.wo.wrap = true
+    vim.wo.linebreak = true
+    vim.wo.colorcolumn = '120'
+  end,
+})
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
