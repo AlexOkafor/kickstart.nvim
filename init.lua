@@ -258,6 +258,15 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
+-- Set comment style for gdshader files
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'gdshader',
+  group = vim.api.nvim_create_augroup('gdshader-comments', { clear = true }),
+  callback = function()
+    vim.bo.commentstring = '// %s'
+  end,
+})
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
